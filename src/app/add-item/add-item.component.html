@@ -1,0 +1,39 @@
+<div [hidden]="submitted">
+  <form #addItemForm="ngForm" id="createItemForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <div>
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required="true" #name="ngModel" [(ngModel)]="model.name">
+        <div [hidden]="name.valid || name.pristine"
+             class="alert alert-danger">
+          Name is required
+        </div>
+      </div>
+
+      <div>
+        <label for="description">Description</label>
+        <input id="description" name="description" type="text"  required="true" [(ngModel)]="model.description">
+      </div>
+
+      <div>
+        <label for="price">Price</label>
+        <input id="price"  name="price" type="number"  required="true" [(ngModel)]="model.price">
+      </div>
+
+      <div>
+        <label for="stock">Stock</label>
+        <input id="stock" name="stock" type="number"  required="true" [(ngModel)]="model.stock">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="!addItemForm.form.valid">Submit</button>
+  </form>
+</div>
+<div [hidden]="!submitted">
+  <p>You've submitted: </p>
+  <div id="tempDisp" style="border: 1px solid darkgoldenrod; margin-top: 25px; width: 400px">
+    <p>{{model | json}}</p>
+  </div>
+</div>
+
+
+

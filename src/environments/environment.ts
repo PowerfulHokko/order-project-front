@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  webservice: "http://localhost:8080",
+  oauth2resourceserverjwtissueruri:"http://localhost:8082/realms/master",
+  keycloakauthserverurl:"http://localhost:8082",
+  keycloakcredentialssecret:"xyQqc9y0xMOZwOI91gQIfLCMEZCKC5ya",
+  keycloakrealm:"master",
+  masterkeycloakusername:"admin",
+  masterkeycloakpassword:"admin",
+  keycloakresource:"orderproject"
 };
 
 /*

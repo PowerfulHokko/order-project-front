@@ -1,0 +1,9 @@
+<h1>All items</h1>
+<p>StatusCode of operation: <span>{{statusCode}}</span></p>
+
+<ul>
+  <li *ngFor="let item of items">
+    <p>{{item.name}}</p>
+    <p>{{item.description}}</p>
+  </li>
+</ul>
